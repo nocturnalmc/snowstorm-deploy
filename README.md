@@ -81,6 +81,6 @@ docker compose -f snowstorm-write-browser/docker-compose.yml down -v
 
 #### 7. Test for Elasticsearch resiliency 
 
-- You can test you cluster resiliency by trying to take down one of the Elasticsearch container and still having your Snowstorm Terminology server & SNOMED CT browser works in their API & query respectively
+- You can test your cluster resiliency by trying to take down one of the Elasticsearch container and still having your Snowstorm Terminology server & SNOMED CT browser works in their API & query respectively
 
 HAPPY HACKING !
