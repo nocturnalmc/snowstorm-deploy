@@ -4,7 +4,7 @@
 - This production ready deployment is tailor made for docker swarm, if you're not familiar with docker swarm please give a read here https://docs.docker.com/engine/swarm/
 - Step by step for production ready deployment are given below
 - The final setup of this SNOMED CT Terminology Server cluster will consist of the following containers
-  - 3 container node clusters Elasticsearch with high availability
+  - 3 containers node clusters Elasticsearch with high availability
   - 2 containers Snowstorm terminology servers with read only config connected to all 3 node cluster Elasticsearch
   - 1 container Snowstorm terminology server with read & write config connected to all 3 node cluster Elasticsearch (for maintenance, not for production use)
   - 1 container SNOMED CT browser connected to Snowstorm terminology server with read & write config (for maintenance, not for production use)
