@@ -1,0 +1,30 @@
+services:
+  snowstorm-server-write:
+    image: snomedinternational/snowstorm:latest
+    container_name: snowstorm-server-write
+    restart: unless-stopped
+    entrypoint: java -Xms2g -Xmx4g --add-opens java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED -cp @/app/jib-classpath-file org.snomed.snowstorm.SnowstormApplication --elasticsearch.urls=http://snowstorm-es01:9200,http://snowstorm-es02:9200,http://snowstorm-es03:9200 --elasticsearch.index.shards=1 --elasticsearch.index.replicas=1
+    networks:
+      - snowstorm-network
+    ports:
+      - 5000:8080
+
+  snowstorm-browser:
+    image: snomedinternational/snomedct-browser:latest
+    container_name: snowstorm-browser
+    restart: unless-stopped
+    depends_on:
+      - snowstorm-server-write
+    links:
+      - snowstorm-server-write
+    networks:
+      - snowstorm-network
+    environment:
+      - API_HOST=http://snowstorm-server-write:8080/
+    ports:
+      - 9090:80
+
+networks:
+  snowstorm-network:
+    name: snowstorm-network
+    external: true
