@@ -83,4 +83,12 @@ docker compose -f snowstorm-write-browser/docker-compose.yml down -v
 
 - You can test your cluster resiliency by trying to take down one of the Elasticsearch container and still having your Snowstorm Terminology server & SNOMED CT browser works in their API & query respectively
 
+#### 8. Scaling up or down Snowstorm Terminology Server
+
+- To scale up or down your Snowstorm Terminology Server, you can run this
+
+```bash
+docker service scale snowstorm-server=<number-of-container>
+```
+
 HAPPY HACKING !
