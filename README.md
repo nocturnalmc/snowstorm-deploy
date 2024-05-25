@@ -11,7 +11,7 @@
 
 ### DEPLOYMENT STEPS
 
-#### 1. Make sure to set vm.max_map_count as Elasticsearch will require it to be set for it to run in docker container. Docs can be followed here https://github.com/IHTSDO/snowstorm/blob/master/docs/using-docker.md
+#### 1. Make sure to set vm.max_map_count as Elasticsearch will require it to be set for it to run in docker container. Docs can be followed here https://github.com/IHTSDO/snowstorm/blob/master/docs/using-docker.md#docker-virtual-memory-limits
 
 #### 2. Create overlay network with --attachable flag so all the containers can connect to it later
 
@@ -46,7 +46,7 @@ docker compose -f snowstorm-es03/docker-compose.yml up -d
 docker compose -f snowstorm-write-browser/docker-compose.yml up -d
 ```
 
-- Browse to http://your-server-ip:5000 for Snowstorm Swagger API and upload your RF2 file following this docs https://github.com/IHTSDO/snowstorm/blob/master/docs/loading-snomed.md
+- Browse to http://your-server-ip:5000 for Snowstorm Swagger API and upload your RF2 file following this docs https://github.com/IHTSDO/snowstorm/blob/master/docs/loading-snomed.md#via-rest
 
 - Your can check the logs of your upload progress
 
@@ -79,7 +79,7 @@ docker compose -f snowstorm-write-browser/docker-compose.yml down -v
 
 - If you ever need to do maintenance eg: upload new RF2 specification, deploy again read & write Snowstorm terminology server & SNOMED CT browser following step no 4
 
-#### 7. Test for Elasticsearch resiliency 
+#### 7. Test for Elasticsearch resiliency
 
 - You can test your cluster resiliency by trying to take down one of the Elasticsearch container and still having your Snowstorm Terminology server & SNOMED CT browser works in their API & query respectively
 
