@@ -88,7 +88,7 @@ docker compose -f snowstorm-write-browser/docker-compose.yml down -v
 - To scale up or down your Snowstorm Terminology Server, you can run this
 
 ```bash
-docker service scale snowstorm-server=<number-of-container>
+docker service scale snowstorm-server=<number-of-containers>
 ```
 
 HAPPY HACKING !
