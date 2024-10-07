@@ -19,6 +19,7 @@ services:
       interval: 1s
       timeout: 1s
       retries: 60
+    mem_limit: 4g
     mem_reservation: 4g
 
 networks:
